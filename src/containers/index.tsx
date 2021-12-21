@@ -1,5 +1,7 @@
-import Dashboard from "./Dashboard.tsx";
+import Dashboard from "./Dashboard";
+import SideBar from "./SideBar"
 
 export {
-    Dashboard
+    Dashboard,
+    SideBar
 }
