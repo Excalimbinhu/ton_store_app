@@ -1,17 +1,16 @@
 import 'react-native-gesture-handler';
 
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { Dashboard } from './src/containers';
 import { NavigationContainer } from '@react-navigation/native';
-
-const Drawer = createDrawerNavigator();
+import { SideBar } from './src/containers';
+import { Provider } from 'react-redux';
+import store from './src/store'
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Drawer.Navigator>
-        <Drawer.Screen name="Home" component={Dashboard}/>
-      </Drawer.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <SideBar />
+      </NavigationContainer>
+    </Provider>
   );
 }
