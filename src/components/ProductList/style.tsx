@@ -15,7 +15,7 @@ const ProductImage = styled.Image`
 const ProductIcon = styled(IconButton)`
     background-color: ${(props: any) => props.cart ? 'firebrick' : 'mediumseagreen'};
     align-self: center;
-    border-radius: 50;
+    border-radius: 50px;
 `
 
 export

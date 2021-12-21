@@ -11,7 +11,8 @@ type ProductListProps = {
     cart?: boolean,
     productsState: any,
     cartState: any,
-    addNewProduct: Function
+    addNewProduct: Function,
+    removeProduct: Function,
 }
 
 function renderListItens(props: ProductListProps)
@@ -20,12 +21,21 @@ function renderListItens(props: ProductListProps)
         cart,
         productsState,
         cartState,
-        addNewProduct
+        addNewProduct,
+        removeProduct
     } = props;
 
-    const productList = cart ? cartState.products : productsState.products
+    let productList = cart ? cartState.products : productsState.products
 
-    return productList.map((item: any) => {
+    if(!cart)
+    {
+        const cartIds = cartState.products.map((cartProd: any) => cartProd.id)
+
+        productList = productsState.products.filter((prod: any) => cartIds.indexOf(prod.id) === -1)
+    }
+
+    return productList
+        .map((item: any) => {
         return(
             <View key={item.id}>
                 <ProductItem title={item.title}
@@ -35,7 +45,7 @@ function renderListItens(props: ProductListProps)
                                     icon={cart ? "minus" : "plus"}
                                     color='white'
                                     onPress={() => {
-                                        cart ? true
+                                        cart ? removeProduct(item.id)
                                         : addNewProduct(item)
                                     }}/>
                     }
