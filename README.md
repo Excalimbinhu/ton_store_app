@@ -5,7 +5,7 @@ Você pode testar o projeto através do aplicativo Expo Go: https://expo.dev/@ex
 
 ou
 
-[Baixar a apk aqui](apk_build/ton_store_app.apk)
+[Baixar a apk aqui](https://github.com/Excalimbinhu/ton_store_app/raw/dev/apk_build/ton_store_app.apk)
 
 Exemplo de uso:
 
