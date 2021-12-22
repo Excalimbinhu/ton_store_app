@@ -39,7 +39,7 @@ function renderListItens(props: ProductListProps)
         return(
             <View key={item.id}>
                 <ProductItem title={item.title}
-                    description={`R$${item.price.toFixed(2)}`}
+                    description={`R$ ${item.price.toFixed(2)}`}
                     left={() => <ProductImage source={{uri: item.image}} />}
                     right={() => <ProductIcon cart={cart}
                                     icon={cart ? "minus" : "plus"}
