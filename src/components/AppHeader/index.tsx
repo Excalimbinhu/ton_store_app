@@ -2,7 +2,7 @@ import { View } from 'react-native';
 import { Appbar, Badge } from 'react-native-paper';
 import { connect } from 'react-redux';
 
-function X(props: any) {
+function AppHeader(props: any) {
     const { route, cartState } = props
 
     return (
@@ -22,4 +22,4 @@ const mapStateToProps = (store: any) => {
     }
 }
 
-export default connect(mapStateToProps)(X)
+export default connect(mapStateToProps)(AppHeader)
